@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教師帳號怎麼登入 — 楊梅高中</title>
+<meta name="description" content="楊梅高中教師帳號說明：三組密碼分別用在哪些服務、忘記帳號密碼怎麼辦、常見狀況怎麼處理。">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+:root{
+  --paper:#EFF2F1; --surface:#FCFCFB; --surface-2:#F3F6F5;
+  --ink:#16211F; --ink-2:#4A5754; --ink-3:#79877F;
+  --rule:#D5DDDA; --hair:#E4EAE8; --accent:#0E6E63; --accent-bg:#E2EEEB;
+  --s:#8F5C16; --s-bg:#F7EFE1;
+  --c:#1F5C93; --c-bg:#E7EFF8;
+  --m:#9C2F6E; --m-bg:#F9E8F1;
+  --warn:#A6321F; --warn-bg:#FAEBE7;
+  --shadow:0 1px 2px rgba(22,33,31,.05),0 10px 28px -20px rgba(22,33,31,.4);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0E1514; --surface:#17201E; --surface-2:#1D2725;
+    --ink:#E7EEEB; --ink-2:#A9B7B3; --ink-3:#7C8C88;
+    --rule:#2D3A37; --hair:#26302E; --accent:#4FB8A5; --accent-bg:#152B27;
+    --s:#BC8429; --s-bg:#2B2113;
+    --c:#4589CC; --c-bg:#13212E;
+    --m:#C94E93; --m-bg:#2C1622;
+    --warn:#C24E30; --warn-bg:#2E1913;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -20px rgba(0,0,0,.9);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+
+/* nav */
+nav{
+  position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);
+}
+nav ul{
+  max-width:760px;margin:0 auto;padding:0 20px;list-style:none;
+  display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+}
+nav ul::-webkit-scrollbar{display:none}
+nav a{
+  display:block;padding:11px 10px;font-size:13.5px;color:var(--ink-2);
+  text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;
+}
+nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* header */
+header{padding:44px 0 8px}
+.kick{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+  color:var(--accent);font-weight:500;margin:0 0 12px;text-transform:uppercase}
+h1{font-family:"Noto Serif TC",Georgia,serif;font-weight:700;
+  font-size:clamp(28px,7vw,40px);line-height:1.25;margin:0 0 16px;text-wrap:balance}
+.dek{font-size:17px;color:var(--ink-2);margin:0}
+.dek b{color:var(--ink)}
+
+section{padding-top:52px}
+h2{font-family:"Noto Serif TC",Georgia,serif;font-weight:600;
+  font-size:clamp(20px,4.5vw,25px);line-height:1.4;margin:0 0 6px;text-wrap:balance}
+.lead{color:var(--ink-2);font-size:15px;margin:0 0 22px}
+.lead b{color:var(--ink)}
+h3{font-family:"Noto Serif TC",Georgia,serif;font-weight:600;font-size:17px;margin:28px 0 8px}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+/* tier cards */
+.tiers{display:grid;gap:14px}
+.tier{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--k);
+  border-radius:10px;padding:18px 20px;box-shadow:var(--shadow)}
+.tier.s{--k:var(--s);--kb:var(--s-bg)}
+.tier.c{--k:var(--c);--kb:var(--c-bg)}
+.tier.m{--k:var(--m);--kb:var(--m-bg)}
+.tier .num{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+  color:var(--k);font-weight:500}
+.tier h3{margin:2px 0 2px;font-size:19px;font-weight:900;font-family:inherit;color:var(--k)}
+.tier .acct{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin:0 0 12px}
+.tier dl{margin:0;display:grid;gap:6px 12px;grid-template-columns:auto 1fr;font-size:14px}
+.tier dt{color:var(--ink-3);white-space:nowrap}
+.tier dd{margin:0;color:var(--ink-2)}
+.tier dd b{color:var(--ink)}
+
+/* search */
+.search{position:relative;margin-bottom:14px}
+.search input{
+  width:100%;font:inherit;font-size:16px;padding:13px 16px;border-radius:10px;
+  border:1px solid var(--rule);background:var(--surface);color:var(--ink);
+}
+.search input::placeholder{color:var(--ink-3)}
+.search input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-bg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.chips button{
+  font:inherit;font-size:13px;padding:5px 13px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);
+}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.count{font-size:13px;color:var(--ink-3);margin:0 0 12px;
+  font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+.hits{display:grid;gap:8px}
+.hit{
+  background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--k);
+  border-radius:8px;padding:12px 15px;
+}
+.hit.s{--k:var(--s)} .hit.c{--k:var(--c)} .hit.m{--k:var(--m)}
+.hit .n{font-size:15px;font-weight:500;color:var(--ink);line-height:1.4}
+.hit .d{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  word-break:break-all;margin-top:1px}
+.hit .a{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.hit .a b{color:var(--k);font-weight:700}
+.hit .a em{font-style:normal;color:var(--warn);font-weight:700}
+.empty{color:var(--ink-3);font-size:14.5px;padding:18px 0}
+
+/* callout */
+.note{border-left:3px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;
+  padding:15px 18px;margin:20px 0;font-size:15px;color:var(--ink-2)}
+.note.risk{border-left-color:var(--warn);background:var(--warn-bg)}
+.note b{color:var(--ink)}
+.note .k{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:500}
+.note.risk .k{color:var(--warn)}
+.note p:last-child{margin-bottom:0}
+
+/* two-up */
+.duo{display:grid;gap:14px;margin-bottom:8px}
+@media(min-width:620px){.duo{grid-template-columns:1fr 1fr}.tiers{grid-template-columns:1fr}}
+.duo>div{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px}
+.duo h3{margin:0 0 6px;font-size:16px;color:var(--accent)}
+.duo p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.duo p b{color:var(--ink)}
+
+/* accordion */
+details{background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+  margin-bottom:8px;overflow:hidden}
+details[open]{box-shadow:var(--shadow)}
+summary{
+  cursor:pointer;padding:14px 18px;font-size:15.5px;font-weight:500;color:var(--ink);
+  list-style:none;display:flex;gap:10px;align-items:flex-start;line-height:1.45;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";margin-left:auto;color:var(--ink-3);font-weight:400;flex:none}
+details[open] summary::after{content:"－"}
+details .body{padding:0 18px 16px;font-size:15px;color:var(--ink-2)}
+details .body p{margin:0 0 10px}
+details .body p:last-child{margin-bottom:0}
+details .body b{color:var(--ink)}
+details .body ol{margin:0;padding-left:1.3em}
+details .body li{margin-bottom:6px}
+.qn{font-family:"IBM Plex Mono",monospace;color:var(--warn);flex:none;font-size:14px;padding-top:1px}
+
+code{font-family:"IBM Plex Mono",monospace;font-size:.9em;background:var(--surface-2);
+  border:1px solid var(--hair);border-radius:4px;padding:1px 5px;word-break:break-all}
+.btn{display:inline-block;margin-top:4px;padding:9px 16px;border-radius:8px;
+  background:var(--accent);color:var(--paper);text-decoration:none;font-size:14.5px;font-weight:500}
+.btn:hover{filter:brightness(1.08)}
+
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--rule);
+  font-size:13.5px;color:var(--ink-3)}
+footer b{color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav><ul>
+  <li><a href="#keys">三組密碼</a></li>
+  <li><a href="#find">查服務</a></li>
+  <li><a href="#tell">怎麼分辨</a></li>
+  <li><a href="#forgot">忘記密碼</a></li>
+  <li><a href="#cases">常見狀況</a></li>
+  <li><a href="#cloud">教育雲服務</a></li>
+</ul></nav>
+
+<div class="wrap">
+
+<header>
+  <p class="kick">楊梅高中 · 資訊媒體組</p>
+  <h1>你有三組密碼，不是一組</h1>
+  <p class="dek">學校、桃園市、教育部各自發一組帳號密碼給你。<b>登不進去的時候，先看你要進的是哪一層。</b>這一頁可以加入手機書籤，需要時直接查。</p>
+</header>
+
+<!-- ============ 三組密碼 ============ -->
+<section id="keys">
+  <h2>三組密碼是哪三組</h2>
+  <p class="lead">這三組是<b>完全獨立</b>的，改其中一組不會動到另外兩組。</p>
+
+  <div class="tiers">
+    <div class="tier s">
+      <span class="num">第 1 組</span>
+      <h3>校內密碼</h3>
+      <p class="acct">學校給你的網域帳號</p>
+      <dl>
+        <dt>用在</dt><dd>辦公室電腦、校內無線網路、Microsoft 365 <code>@ymhs.tyc.edu.tw</code></dd>
+        <dt>怎麼改</dt><dd><b>在辦公室電腦按 Ctrl＋Alt＋Del</b> → 變更密碼</dd>
+        <dt>注意</dt><dd>學校的 Google <code>@ymhs.tyc.edu.tw</code> 是<b>另外一組密碼</b>，不會跟著改</dd>
+      </dl>
+    </div>
+
+    <div class="tier c">
+      <span class="num">第 2 組</span>
+      <h3>市網密碼</h3>
+      <p class="acct">桃園市校園單一認證帳號（縣市帳號）</p>
+      <dl>
+        <dt>用在</dt><dd>桃園市教育資源入口網、Google <code>@ms.tyc.edu.tw</code>、Microsoft 365 <code>@o365.tyc.edu.tw</code>、Adobe</dd>
+        <dt>怎麼改</dt><dd>登入桃園市單一帳號認證平台變更</dd>
+        <dt>注意</dt><dd>改完之後，<b>要再回認證平台按一次同步</b>，Google 才會認得新密碼</dd>
+      </dl>
+    </div>
+
+    <div class="tier m">
+      <span class="num">第 3 組</span>
+      <h3>教育雲密碼</h3>
+      <p class="acct">教育部教育雲端帳號 <code>@sso.edu.tw</code></p>
+      <dl>
+        <dt>用在</dt><dd>教育部信箱 <code>@mail.edu.tw</code>、Google <code>@go.edu.tw</code>、Microsoft 365 <code>@ms.edu.tw</code>、在職進修網，以及另外 <b>47 個教育部介接服務</b></dd>
+        <dt>怎麼改</dt><dd>到教育部認證頁自行變更</dd>
+        <dt>注意</dt><dd>這一層<b>不會用到 Google 或 Microsoft 自己的密碼</b>，一律用教育雲端帳號登入</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 查服務 ============ -->
+<section id="find">
+  <h2>我要登入這個，打哪一組密碼？</h2>
+  <p class="lead">輸入服務名稱或網域關鍵字就能查，例如「Adobe」、「進修」、「雲端硬碟」、<code>go.edu.tw</code>。</p>
+
+  <div class="search">
+    <input id="q" type="search" placeholder="搜尋服務名稱或網域…" autocomplete="off"
+           aria-label="搜尋服務名稱或網域">
+  </div>
+  <div class="chips" id="chips">
+    <button type="button" data-t="" aria-pressed="true">全部</button>
+    <button type="button" data-t="s" aria-pressed="false">校內</button>
+    <button type="button" data-t="c" aria-pressed="false">市網</button>
+    <button type="button" data-t="m" aria-pressed="false">教育部</button>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="hits" id="hits"></div>
+</section>
+
+<!-- ============ 怎麼分辨 ============ -->
+<section id="tell">
+  <h2>分不清楚時，用這一招</h2>
+  <p class="lead">輸入帳號之後，<b>看畫面有沒有跳走</b>。</p>
+  <div class="duo">
+    <div>
+      <h3>畫面跳走了</h3>
+      <p>跳到桃園市或教育部的登入頁面，代表要打的是<b>那一邊</b>的密碼。</p>
+    </div>
+    <div>
+      <h3>畫面沒跳走</h3>
+      <p>還停在 Google 或 Microsoft 自己的頁面，代表要打的是<b>這個服務自己</b>的密碼。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 忘記密碼 ============ -->
+<section id="forgot">
+  <h2>申請帳號、忘記帳號、忘記密碼</h2>
+  <p class="lead">三組密碼的處理管道完全不同，先確認是哪一組。</p>
+
+  <details>
+    <summary><span class="qn">1</span>校內密碼</summary>
+    <div class="body">
+      <p><b>申請帳號　</b>到職後由資訊媒體組建立，不需自行申請。沒收到帳號請洽本組。</p>
+      <p><b>忘記帳號　</b>洽資訊媒體組查詢，需本人確認身分。</p>
+      <p><b>忘記密碼　</b>可以自己線上重設：</p>
+      <p><a class="btn" href="https://academic.ymhs.tyc.edu.tw/ipam/wifi-forgot-password">前往重設校內密碼</a></p>
+      <p>重設信會寄到<b>學校的 Google 信箱</b>，所以要先能收那個信箱的信。</p>
+      <p><b>忘記學校 Google 密碼　</b>沒有自助管道，請<b>洽資媒組長協助重設</b>。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">2</span>市網密碼</summary>
+    <div class="body">
+      <p><b>申請帳號　</b>由學校承辦在市府系統造冊建立，教師無法自行申請。</p>
+      <p><b>忘記帳號　</b>洽學校承辦查詢。</p>
+      <p><b>忘記密碼　</b>在桃園市單一帳號認證平台按「忘記密碼」自助重設；無法自行處理再洽學校承辦。</p>
+      <p><b>重設之後　</b>記得回認證平台執行一次同步，否則 <code>@ms.tyc.edu.tw</code> 的 Google 還是舊密碼。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">3</span>教育雲密碼</summary>
+    <div class="body">
+      <p><b>申請帳號　</b>自行到教育部認證頁按「申請帳號」。已配發但從未使用過的，請按「啟用帳號」。</p>
+      <p><b>忘記帳號　</b>認證頁按「忘記帳號」，依畫面指示查詢。</p>
+      <p><b>忘記密碼　</b>認證頁按「忘記密碼」自助處理。</p>
+      <p><b>備援方式　</b>若仍處理不了，登入畫面可改按「使用縣市帳號登入」先進入——兩條路指向的是同一個帳號。</p>
+      <p><a class="btn" href="https://www.sso.edu.tw/">前往教育部認證服務</a></p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ 常見狀況 ============ -->
+<section id="cases">
+  <h2>六個最常遇到的狀況</h2>
+  <p class="lead">點開看處理方式。</p>
+
+  <details>
+    <summary><span class="qn">①</span>改了電腦密碼，手機和平板連不上校內 WiFi</summary>
+    <div class="body">
+      <p>密碼存在裝置裡，不會自己更新。</p>
+      <ol>
+        <li>打開裝置的 Wi-Fi 設定</li>
+        <li>把校內網路選「忘記此網路」</li>
+        <li>重新連線，輸入新密碼</li>
+      </ol>
+      <p><b>每一台裝置都要做一次</b>，包含手機、平板與筆電。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">②</span>改了電腦密碼，學校的 Google 就進不去了</summary>
+    <div class="body">
+      <p>學校 Google <code>@ymhs.tyc.edu.tw</code> 是<b>獨立的一組密碼</b>，不會跟著電腦密碼改。請用原本那一組登入。</p>
+      <p><b>這一組請務必記牢</b>——忘記電腦密碼時，重設信就是寄到這個信箱。它沒有自助重設，忘記只能請資媒組長協助。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">③</span>改了市網密碼，<code>@ms.tyc.edu.tw</code> 的 Google 進不去</summary>
+    <div class="body">
+      <p>市網密碼<b>不會自動同步</b>到 Google。請再登入一次桃園市單一帳號認證平台，執行「同步」，Google 才會認得新密碼。</p>
+      <p>這一步沒做的話，會出現「入口網進得去、Google 進不去」的情況。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">④</span>Adobe 問我要用「個人」還是「公司或學校」帳戶</summary>
+    <div class="body">
+      <p>選<b>公司或學校帳戶</b>，才會轉到市府認證並取得授權。</p>
+      <p>選錯會進到沒有授權的個人帳戶，看起來就像授權沒發下來。Adobe 自己的「忘記密碼」對這裡沒有用，密碼要回市網系統重設。</p>
+      <p>Adobe 帳號不限定用 <code>@ms.tyc.edu.tw</code> 信箱，但認證一定要過桃園市教育局的帳號。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">⑤</span>想改用教育雲帳號登入全國教師在職進修網</summary>
+    <div class="body">
+      <p><b>順序很重要：</b></p>
+      <ol>
+        <li>先用<b>原本的帳號密碼</b>登入進修網</li>
+        <li>在個人資料裡完成<b>教育雲端帳號綁定</b></li>
+        <li>之後才改用教育雲登入</li>
+      </ol>
+      <p><b>順序反了，過去的研習時數可能會看不到。</b>已經出錯的個案需要向進修網客服申請合併。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="qn">⑥</span>校內密碼可以從 Microsoft 網頁改嗎</summary>
+    <div class="body">
+      <p><b>不要。</b>從網頁改的密碼不會傳回學校系統，會造成電腦和 Microsoft 各認一組密碼，而且沒有任何提示。</p>
+      <p>校內密碼一律<b>在辦公室電腦上按 Ctrl＋Alt＋Del 變更</b>。</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ 教育雲服務 ============ -->
+<section id="cloud">
+  <h2>教育雲端帳號還能登入什麼</h2>
+  <p class="lead">教育部認證服務目前介接 <b>51 個應用服務</b>，全部都可以用教育雲端帳號直接登入。</p>
+
+  <div class="note">
+    <span class="k">關鍵一句話</span>
+    <p><b>這些服務都不需要另外註冊，也不用另外記密碼。</b>看到登入頁時找「教育雲端帳號登入」或教育部圖示就對了。上面的<a href="#find">查服務</a>已經把全部服務收進去，直接搜尋就能查。</p>
+  </div>
+
+  <p>對高中教師最直接有用的幾個：<strong>全國教師在職進修網</strong>（研習時數）、<strong>大學選才與高中育才輔助系統 Collego</strong>（升學輔導）、<strong>國立臺灣圖書館高級中等學校自主學習資源網</strong>（自主學習）、<strong>教育部磨課師</strong>與<strong>合作備課</strong>（專業發展）。</p>
+
+  <p>完整清單由教育部維護，會隨介接進度增減，最新版本請查 <a href="https://www.sso.edu.tw/splist">www.sso.edu.tw/splist</a>。本頁清單擷取於 2026 年 9 月 2 日。</p>
+</section>
+
+<footer>
+  <p><b>找不到答案時</b>，請告訴資訊媒體組三件事：①你要進的是哪一個服務（畫面上的網址或名稱）②你輸入的帳號是哪一個 ③最近有沒有改過密碼、改的是哪一組。有這三項通常一次就能解決。</p>
+  <p>楊梅高中資訊媒體組編製。市級與部級系統的登入方式由主管機關決定，可能隨其系統改版而變動。</p>
+</footer>
+
+</div>
+
+<script>
+const T = { s:{n:'校內', k:'校內密碼'}, c:{n:'市網', k:'市網密碼'}, m:{n:'教育部', k:'教育雲密碼'} };
+
+/* 主要登入入口 */
+const CORE = [
+  ['s','辦公室電腦、校內無線網路','學校網域帳號','打 <b>校內密碼</b>。改密碼後每台裝置都要重新輸入一次。'],
+  ['s','Microsoft 365（學校）','@ymhs.tyc.edu.tw','打 <b>校內密碼</b>。不要從 Microsoft 網頁改密碼。'],
+  ['s','Google 雲端硬碟、Gmail（學校）','@ymhs.tyc.edu.tw','<em>這是另外一組密碼！</em>學校 Google 專用，不會跟著校內密碼變。'],
+  ['c','桃園市教育資源入口網','縣市帳號','打 <b>市網密碼</b>。'],
+  ['c','Google 雲端硬碟、Gmail（市網）','@ms.tyc.edu.tw','打 <b>市網密碼</b>。改完密碼要回認證平台按同步才生效。'],
+  ['c','Microsoft 365（市網）','@o365.tyc.edu.tw','打 <b>市網密碼</b>，畫面會跳轉到市府登入頁。'],
+  ['c','Adobe Creative Cloud','教育局配發的帳號','打 <b>市網密碼</b>，畫面會跳轉。登入時要選「公司或學校帳戶」。'],
+  ['m','教育部信箱','@mail.edu.tw','打 <b>教育雲密碼</b>。'],
+  ['m','Google 雲端硬碟、Gmail（教育部）','@go.edu.tw','打 <b>教育雲密碼</b>，畫面會跳轉到教育部認證頁。'],
+  ['m','Microsoft 365（教育部）','@ms.edu.tw','打 <b>教育雲密碼</b>，畫面會跳轉。'],
+  ['m','全國教師在職進修網','www3.inservice.edu.tw','原生帳密或 <b>教育雲密碼</b> 皆可。改用教育雲前請先完成綁定，否則時數可能看不到。'],
+];
+
+/* 其餘教育部介接服務（皆用教育雲端帳號登入） */
+const CLOUD = [
+  ['教育部磨課師','moocs.moe.edu.tw'],
+  ['教育部特殊教育專業發展數位課程平台','specialeduelearning.moe.edu.tw'],
+  ['合作備課','weteach.edu.tw'],
+  ['大學選才與高中育才輔助系統 Collego','collego.edu.tw'],
+  ['國立臺灣圖書館高級中等學校自主學習資源網','sdl.ntl.edu.tw'],
+  ['國民中小學課程與教學資源整合平臺','cirn.moe.edu.tw'],
+  ['教育雲數位學習入口網','cloud.edu.tw'],
+  ['教育大市集','market.cloud.edu.tw'],
+  ['教育百科','pedia.cloud.edu.tw'],
+  ['教育媒體影音','video.cloud.edu.tw'],
+  ['教育雲電子書整合服務平台','oidcebook.nlpi.edu.tw'],
+  ['電子書服務平台','ebook.nlpi.edu.tw'],
+  ['因材網＋學習拍','adl.edu.tw'],
+  ['推動中小學數位學習精進方案入口網','pads.moe.edu.tw'],
+  ['愛學網','stv.naer.edu.tw'],
+  ['國立教育廣播電台 Channel+','channelplus.ner.gov.tw'],
+  ['英語線上學習平台 Cool English','coolenglish.edu.tw'],
+  ['全民資安素養自我評量','isafeevent.moe.edu.tw'],
+  ['科學學習中心','mslc.nmmst.gov.tw'],
+  ['故宮線上學校','ipalace.npm.edu.tw'],
+  ['教育部綠色學校夥伴網路','greenschool.moe.edu.tw'],
+  ['校園樹木資訊平臺','edutreemap.moe.edu.tw'],
+  ['全國法規資料庫競賽活動網站','compete.law.moj.gov.tw'],
+  ['均一教育平台','junyiacademy.org'],
+  ['PaGamO','pagamo.org'],
+  ['學習吧','learnmode.net'],
+  ['ShareClass','shareclass.org'],
+  ['OneClass','oneclass.com.tw'],
+  ['康軒雲','945cloud.knsh.com.tw'],
+  ['醍摩豆 TEAM Model 智慧教育','habook.com'],
+  ['何嘉仁國小英語教師網','neweteaching.hess.com.tw'],
+  ['何嘉仁電子書櫃','bookonline.hess.com.tw'],
+  ['全華科友 108 教育平台','chwa.com.tw'],
+  ['全華國中藝能科平台','chwa.com.tw'],
+  ['酷課雲（臺北市）','cooc.tp.edu.tw'],
+  ['飛番教學雲（臺南市）','hahay.tn.edu.tw'],
+  ['E-game（高雄市）','egame.kh.edu.tw'],
+  ['達學堂（高雄市）','drlive.kh.edu.tw'],
+  ['網路假期（高雄市）','netholiday.kh.edu.tw'],
+  ['國際扶輪 3510 地區偏鄉英語線上課業輔導計畫','rotary.kh.edu.tw'],
+  ['宜蘭縣學習地圖教學應用平台','d2.ilc.edu.tw'],
+  ['Scratch 程式教學平台（宜蘭縣）','s3.ilc.edu.tw'],
+  ['花蓮字音字形學習網','word.hlc.edu.tw'],
+  ['國立高級中等以下學校 DNS 管理系統','dns.hs.edu.tw'],
+  ['教育單位弱點檢測平臺','evs.ncku.edu.tw'],
+  ['青年教育與就業儲蓄帳戶方案填報系統','young.cloud.ncnu.edu.tw'],
+  ['國中小課程與教學計畫填報系統','teach.cloud.ncnu.edu.tw'],
+];
+
+const DATA = [
+  ...CORE.map(([t,n,d,a])=>({t,n,d,a})),
+  ...CLOUD.map(([n,d])=>({t:'m',n,d,a:'打 <b>教育雲密碼</b>，用教育雲端帳號登入即可，不必另外註冊。'})),
+];
+
+const q = document.getElementById('q');
+const hits = document.getElementById('hits');
+const count = document.getElementById('count');
+let tier = '';
+
+function draw(){
+  const term = q.value.trim().toLowerCase();
+  const list = DATA.filter(x =>
+    (!tier || x.t === tier) &&
+    (!term || (x.n + ' ' + x.d + ' ' + T[x.t].n).toLowerCase().includes(term))
+  );
+  count.textContent = '符合 ' + list.length + ' 項（共 ' + DATA.length + ' 項）';
+  if (!list.length){
+    hits.innerHTML = '<p class="empty">查不到「' + q.value.replace(/[<>&]/g,'') +
+      '」。試試更短的關鍵字，或直接看上面的三組密碼說明。</p>';
+    return;
+  }
+  hits.innerHTML = list.map(x =>
+    '<div class="hit ' + x.t + '">' +
+      '<div class="n">' + x.n + '</div>' +
+      '<div class="d">' + x.d + '</div>' +
+      '<div class="a">' + x.a + '</div>' +
+    '</div>'
+  ).join('');
+}
+
+q.addEventListener('input', draw);
+document.querySelectorAll('#chips button').forEach(b => {
+  b.addEventListener('click', () => {
+    tier = b.dataset.t;
+    document.querySelectorAll('#chips button').forEach(x =>
+      x.setAttribute('aria-pressed', String(x === b)));
+    draw();
+  });
+});
+draw();
+</script>
+</body>
+</html>
