@@ -200,10 +200,11 @@ footer b{color:var(--ink-2)}
     <div class="tier s">
       <span class="num">第 1 組</span>
       <h3>校內密碼</h3>
-      <p class="acct">學校給你的網域帳號</p>
+      <p class="acct">學校給你的帳號</p>
       <dl>
-        <dt>用在</dt><dd>辦公室電腦、校內無線網路、Microsoft 365 <code>@ymhs.tyc.edu.tw</code></dd>
-        <dt>怎麼改</dt><dd><b>在辦公室電腦按 Ctrl＋Alt＋Del</b> → 變更密碼</dd>
+        <dt>用在</dt><dd>校內無線網路（WiFi）、Microsoft 365 <code>@ymhs.tyc.edu.tw</code></dd>
+        <dt>怎麼改</dt><dd>只有一個地方能改：<a href="#forgot">校內密碼管理頁</a>。<b>學校電腦沒有加入網域，所以沒有「按 Ctrl＋Alt＋Del 改密碼」這條路。</b></dd>
+        <dt>連帶影響</dt><dd>這一組<b>就是 WiFi 認證用的密碼</b>，改了之後所有連校內 WiFi 的裝置都要重新輸入</dd>
         <dt>注意</dt><dd>學校的 Google <code>@ymhs.tyc.edu.tw</code> 是<b>另外一組密碼</b>，不會跟著改</dd>
       </dl>
     </div>
@@ -277,14 +278,14 @@ footer b{color:var(--ink-2)}
     <div class="body">
       <p><b>申請帳號　</b>到職後由資訊媒體組建立，不需自行申請。沒收到帳號請洽本組。</p>
       <p><b>忘記帳號　</b>洽資訊媒體組查詢，需本人確認身分。</p>
-      <p><b>忘記密碼　</b>可以自己線上處理，流程是三步：</p>
+      <p><b>忘記密碼，或想改密碼　</b>都走同一條路——這是<b>唯一</b>可以變更校內密碼的地方，流程三步：</p>
       <ol>
         <li>到下面這一頁<b>送出重設信申請</b>（不是在這一頁直接設新密碼）</li>
         <li>系統把重設信寄到你的<b>學校 Google 信箱</b> <code>@ymhs.tyc.edu.tw</code></li>
         <li>打開那封信，依信中指示設定新密碼</li>
       </ol>
       <p><a class="btn" href="https://academic.ymhs.tyc.edu.tw/ipam/wifi-forgot-password">送出重設信申請</a></p>
-      <p>所以<b>要先能收到學校 Google 信箱的信</b>，這個流程才走得完。</p>
+      <p>所以<b>要先能收到學校 Google 信箱的信</b>，這個流程才走得完。設定完成後，<b>所有連校內 WiFi 的裝置都要重新輸入新密碼</b>。</p>
       <p><b>忘記學校 Google 密碼　</b>沒有自助管道，請<b>洽資媒組長協助重設</b>。</p>
     </div>
   </details>
@@ -317,9 +318,9 @@ footer b{color:var(--ink-2)}
   <p class="lead">點開看處理方式。</p>
 
   <details>
-    <summary><span class="qn">①</span>改了電腦密碼，手機和平板連不上校內 WiFi</summary>
+    <summary><span class="qn">①</span>改了校內密碼，手機和平板連不上校內 WiFi</summary>
     <div class="body">
-      <p>密碼存在裝置裡，不會自己更新。</p>
+      <p>校內密碼<b>就是 WiFi 認證用的那一組</b>，改了之後裝置裡存的還是舊密碼，不會自己更新。</p>
       <ol>
         <li>打開裝置的 Wi-Fi 設定</li>
         <li>把校內網路選「忘記此網路」</li>
@@ -330,10 +331,10 @@ footer b{color:var(--ink-2)}
   </details>
 
   <details>
-    <summary><span class="qn">②</span>改了電腦密碼，學校的 Google 就進不去了</summary>
+    <summary><span class="qn">②</span>改了校內密碼，學校的 Google 就進不去了</summary>
     <div class="body">
-      <p>學校 Google <code>@ymhs.tyc.edu.tw</code> 是<b>獨立的一組密碼</b>，不會跟著電腦密碼改。請用原本那一組登入。</p>
-      <p><b>這一組請務必記牢</b>——忘記電腦密碼時，重設信就是寄到這個信箱，收不到信就走不完重設流程。它本身沒有自助重設，忘記只能請資媒組長協助。</p>
+      <p>學校 Google <code>@ymhs.tyc.edu.tw</code> 是<b>獨立的一組密碼</b>，不會跟著校內密碼改。請用原本那一組登入。</p>
+      <p><b>這一組請務必記牢</b>——重設校內密碼時，那封信就是寄到這個信箱，收不到信就走不完重設流程。它本身沒有自助重設，忘記只能請資媒組長協助。</p>
     </div>
   </details>
 
@@ -368,10 +369,15 @@ footer b{color:var(--ink-2)}
   </details>
 
   <details>
-    <summary><span class="qn">⑥</span>校內密碼可以從 Microsoft 網頁改嗎</summary>
+    <summary><span class="qn">⑥</span>校內密碼要在哪裡改</summary>
     <div class="body">
-      <p><b>不要。</b>從網頁改的密碼不會傳回學校系統，會造成電腦和 Microsoft 各認一組密碼，而且沒有任何提示。</p>
-      <p>校內密碼一律<b>在辦公室電腦上按 Ctrl＋Alt＋Del 變更</b>。</p>
+      <p><b>只有一個地方：<a href="#forgot">校內密碼管理頁</a>。</b>送出重設信申請後，依信中連結設定新密碼。</p>
+      <p>兩條看起來可行、實際上不行的路：</p>
+      <ol>
+        <li><b>按 Ctrl＋Alt＋Del 改密碼　</b>學校電腦沒有加入網域，這個畫面改的是那台電腦本機的密碼，跟校內帳號無關。</li>
+        <li><b>從 Microsoft 網頁改　</b>改了不會傳回學校系統，會造成 WiFi 認證與 Microsoft 各認一組密碼，而且沒有任何提示。</li>
+      </ol>
+      <p>改完之後記得：<b>所有連校內 WiFi 的裝置都要重新輸入新密碼</b>（見狀況①）。</p>
     </div>
   </details>
 </section>
@@ -403,8 +409,8 @@ const T = { s:{n:'校內', k:'校內密碼'}, c:{n:'市網', k:'市網密碼'}, 
 
 /* 主要登入入口 */
 const CORE = [
-  ['s','辦公室電腦、校內無線網路','學校網域帳號','打 <b>校內密碼</b>。改密碼後每台裝置都要重新輸入一次。'],
-  ['s','Microsoft 365（學校）','@ymhs.tyc.edu.tw','打 <b>校內密碼</b>。不要從 Microsoft 網頁改密碼。'],
+  ['s','校內無線網路 WiFi','學校帳號','打 <b>校內密碼</b>。這一組就是 WiFi 認證密碼，改了之後每台裝置都要重新輸入一次。'],
+  ['s','Microsoft 365（學校）','@ymhs.tyc.edu.tw','打 <b>校內密碼</b>。不要從 Microsoft 網頁改密碼，改了不會傳回學校系統。'],
   ['s','Google 雲端硬碟、Gmail（學校）','@ymhs.tyc.edu.tw','<em>這是另外一組密碼！</em>學校 Google 專用，不會跟著校內密碼變。'],
   ['c','桃園市教育資源入口網','縣市帳號','打 <b>市網密碼</b>。'],
   ['c','Google 雲端硬碟、Gmail（市網）','@ms.tyc.edu.tw','打 <b>市網密碼</b>。改完密碼要回認證平台按同步才生效。'],
