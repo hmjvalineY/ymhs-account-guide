@@ -165,6 +165,14 @@ code{font-family:"IBM Plex Mono",monospace;font-size:.9em;background:var(--surfa
 .btn{display:inline-block;margin-top:4px;padding:9px 16px;border-radius:8px;
   background:var(--accent);color:var(--paper);text-decoration:none;font-size:14.5px;font-weight:500}
 .btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:var(--surface);color:var(--accent);border:1px solid var(--accent)}
+.figmap{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+  padding:12px;box-shadow:var(--shadow)}
+.figmap a{display:block;border-radius:6px;overflow:hidden;background:#fff}
+.figmap img{display:block;width:100%;height:auto}
+.figmap figcaption{font-size:13.5px;color:var(--ink-3);margin-top:10px;text-align:center}
+.dl{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.dl .btn{margin-top:0}
 
 footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--rule);
   font-size:13.5px;color:var(--ink-3)}
@@ -176,6 +184,7 @@ footer b{color:var(--ink-2)}
 
 <nav><ul>
   <li><a href="#keys">三組密碼</a></li>
+  <li><a href="#map">一張圖</a></li>
   <li><a href="#find">查服務</a></li>
   <li><a href="#tell">怎麼分辨</a></li>
   <li><a href="#forgot">忘記密碼</a></li>
@@ -231,6 +240,23 @@ footer b{color:var(--ink-2)}
         <dt>注意</dt><dd>這一層<b>不會用到 Google 或 Microsoft 自己的密碼</b>，一律用教育雲端帳號登入</dd>
       </dl>
     </div>
+  </div>
+</section>
+
+<!-- ============ 一張圖 ============ -->
+<section id="map">
+  <h2>一張圖看懂三組密碼</h2>
+  <p class="lead">同樣的內容整理成一張 A4 直式資訊圖表，<b>適合印出來貼在辦公桌或電腦教室</b>。手機上看字太小，請點圖開啟原尺寸。</p>
+  <figure class="figmap">
+    <a href="account-map.png" target="_blank" rel="noopener">
+      <img src="account-map.png" width="1653" height="2339" loading="lazy"
+           alt="桃園市教師帳號地圖資訊圖表。三欄分別為校內密碼、市網密碼、教育雲密碼。校內密碼用於校內 WiFi 與 Microsoft 365，學校 Google 是另一組密碼；市網密碼用於教育資源入口網、Microsoft 365（A3）、Google（需手動同步）與 Adobe；教育雲密碼用於教育部信箱、Google、Microsoft 365、在職進修網及 47 個介接服務。底部說明以畫面是否跳轉判斷該打哪組密碼，以及三個最常見的例外。">
+    </a>
+    <figcaption>點圖可開啟原尺寸（1653 × 2339）</figcaption>
+  </figure>
+  <div class="dl">
+    <a class="btn" href="account-map.pdf" download="帳號地圖資訊圖表.pdf">下載 PDF（列印用）</a>
+    <a class="btn ghost" href="account-map.png" download="帳號地圖資訊圖表.png">下載 PNG 圖片</a>
   </div>
 </section>
 
